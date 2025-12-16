@@ -3,11 +3,41 @@
 <head>
     <title>Dice Roller App</title>
 
-    <style>
+      <style>
+        .dice-container{
+            border: 1px solid black;
+            max-width: fit-content;
+            padding: 20px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .roll-button{
+            background-color: #000;
+            color:#fff;
+            font-size: 20px;
+            padding: 5px 20px;
+            border:none;
+            width: 150px;
+            border-radius: 40px;
+            margin-top: 20px;
+            cursor:pointer;
+        }
+        
+        #dice-image{
+           height: 200px;
+           object-fit: contain;
+        }
 
-
-    </style>
-    <body>
+        #result{
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+       </style>
+</head>
+<body>
         <div class="dice-container">
     <h1>Dice Roller App</h1>
 
@@ -17,6 +47,6 @@
 
     <button class="roll-button" onclick="rollDice()">Roll Dice</button>
   </div>
-    </body>
+</body>
    
 </html>
