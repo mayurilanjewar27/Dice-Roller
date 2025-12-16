@@ -48,5 +48,28 @@
     <button class="roll-button" onclick="rollDice()">Roll Dice</button>
   </div>
 </body>
-   
+<script>
+   function rollDice(){
+    const imgElement = document.getElementById("dice-image");
+    const resultElement = document.getElementById("result");
+    const randomNum = Math.floor(Math.random() * 6) + 1;
+
+    resultElement.innerText = `Hurray! You rolled the dice and got: ${randomNum}`;
+
+    if(randomNum === 1){
+        imgElement.src = "one.png";
+    } else if(randomNum === 2){
+        imgElement.src = "two.png";
+    } else if(randomNum === 3){
+        imgElement.src = "three.png";
+    } else if(randomNum === 4){
+        imgElement.src = "four.png";
+    } else if(randomNum === 5){
+        imgElement.src = "five.png";
+    } else {
+        imgElement.src = "six.png";
+    }
+}
+
+</script>
 </html>
