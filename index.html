@@ -3,73 +3,78 @@
 <head>
     <title>Dice Roller App</title>
 
-      <style>
+    <style>
         .dice-container{
             border: 1px solid black;
-            max-width: fit-content;
             padding: 20px 30px;
+            width: fit-content;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        
-        .roll-button{
-            background-color: #000;
-            color:#fff;
-            font-size: 20px;
-            padding: 5px 20px;
-            border:none;
-            width: 150px;
-            border-radius: 40px;
-            margin-top: 20px;
-            cursor:pointer;
-        }
-        
-        #dice-image{
-           height: 200px;
-           object-fit: contain;
+
+        #diceImg{
+            height: 200px;
+            object-fit: contain;
         }
 
-        #result{
+        #rollBtn{
+            background-color: black;
+            color: white;
+            font-size: 20px;
+            padding: 8px 25px;
+            border: none;
+            border-radius: 40px;
             margin-top: 15px;
+            cursor: pointer;
+        }
+
+        #diceResult{
+            margin-top: 10px;
             font-size: 18px;
             font-weight: bold;
         }
-       </style>
+    </style>
 </head>
+
 <body>
-        <div class="dice-container">
+
+<div class="dice-container">
     <h1>Dice Roller App</h1>
 
-    <img src="default.png" alt="Dice" id="dice-image" />
+ 
+    <img src="default.png" id="diceImg" alt="Dice">
 
-    <p id="result"></p>
+    <p id="diceResult">Click Roll Dice</p>
 
-    <button class="roll-button" onclick="rollDice()">Roll Dice</button>
-  </div>
-</body>
+    
+    <button id="rollBtn" onclick="rollDice()">Roll Dice</button>
+</div>
+
 <script>
-   function rollDice(){
-    const imgElement = document.getElementById("dice-image");
-    const resultElement = document.getElementById("result");
+function rollDice(){
+    const diceImg = document.getElementById("diceImg");
+    const diceResult = document.getElementById("diceResult");
+
     const randomNum = Math.floor(Math.random() * 6) + 1;
 
-    resultElement.innerText = `Hurray! You rolled the dice and got: ${randomNum}`;
+    diceResult.innerText = "You rolled: " + randomNum;
 
     if(randomNum === 1){
-        imgElement.src = "one.png";
+        diceImg.src = "one.png";
     } else if(randomNum === 2){
-        imgElement.src = "two.png";
+        diceImg.src = "two.png";
     } else if(randomNum === 3){
-        imgElement.src = "three.png";
+        diceImg.src = "three.png";
     } else if(randomNum === 4){
-        imgElement.src = "four.png";
+        diceImg.src = "four.png";
     } else if(randomNum === 5){
-        imgElement.src = "five.png";
-    } else {
-        imgElement.src = "six.png";
+        diceImg.src = "five.png";
+    }  else {
+        diceImg.src = "six.png";
     }
 }
-
 </script>
+
+</body>
 </html>
